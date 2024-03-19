@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="247" height="130" viewBox="0 0 247 130">
+  <rect width="247" height="130" fill="#fff"/>
+  <path d="M0,0 h247 v14.44 H0 z" fill="#b22234"/>
+  <path d="M0,28.88 h247 v14.44 H0 z" fill="#b22234"/>
+  <path d="M0,57.76 h247 v14.44 H0 z" fill="#b22234"/>
+  <path d="M0,86.64 h247 v14.44 H0 z" fill="#b22234"/>
+  <path d="M0,115.52 h247 v14.44 H0 z" fill="#b22234"/>
+  <rect width="98.8" height="77.6" fill="#3c3b6e"/>
+  <!-- Stars (simplified with circles for the example) -->
+  <g fill="#fff">
+    <circle cx="9.88" cy="7.76" r="2.62"/>
+    <!-- Add additional stars here -->
+  </g>
+</svg>

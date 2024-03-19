@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Recursos/css/styleCsslogin.css"> <!-- Ajusta la ruta al archivo CSS según tu estructura de proyecto -->
-
+  
 
 
     <title>Login</title>
@@ -17,32 +19,37 @@
     }
 
     .body_class {
-            background-image: url('Recursos/img/FondoLogin.svg');
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            overflow: hidden;
-            background-size: cover; /* Ajustar tamaño de la imagen */
-            background-position: center; /* Centrar la imagen */
-        }
+        background-image: url('Recursos/img/FondoLogin.svg');
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        overflow: hidden;
+        background-size: cover;
+        /* Ajustar tamaño de la imagen */
+        background-position: center;
+        /* Centrar la imagen */
+    }
 
-        .container-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
+    .container-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
 
-        .card {
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente para el formulario */
-        }
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        /* Fondo semi-transparente para el formulario */
+    }
 
-        /* Media queries para ajustar la imagen de fondo en pantallas grandes */
-        @media (min-width: 992px) {
-            .body_class {
-                background-size: contain; /* Cambiar tamaño de la imagen */
-                background-position: left; /* Cambiar posición de la imagen */
-            }
+    /* Media queries para ajustar la imagen de fondo en pantallas grandes */
+    @media (min-width: 992px) {
+        .body_class {
+            background-size: contain;
+            /* Cambiar tamaño de la imagen */
+            background-position: left;
+            /* Cambiar posición de la imagen */
         }
+    }
 </style>
 
 <body class="body_class">
@@ -71,12 +78,14 @@
                             <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
                         </div>
                         <?php
-                        if (isset($mensaje)) {
+                        if (isset($_SESSION['mensaje'])) {
                             echo '<div class="form-group">';
                             echo '<div class="alert alert-danger">';
-                            echo $mensaje;
+                            echo $_SESSION['mensaje'];
                             echo '</div>';
                             echo '</div>';
+                            // Borra el mensaje de la sesión
+                            unset($_SESSION['mensaje']);
                         }
                         ?>
                         <div class="mb-3">

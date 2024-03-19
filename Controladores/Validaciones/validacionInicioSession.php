@@ -4,51 +4,39 @@ require_once "../Conexion/Conexion.php";
 
 // Comprueba si se ha enviado el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   
     // Obtiene las credenciales del formulario
     $correo = $_POST['correo'];
     $clave = $_POST['clave'];
-    
+
     // Prepara la consulta SQL
-    $sql = "SELECT * FROM usuario WHERE Correo = ?";
-    echo "correo capturados {$correo} y clave {$clave}";
+    $sql = "SELECT * FROM usuario WHERE Correo = ? AND Clave = ?";
+
     // Prepara la declaración
     if ($stmt = $conn->prepare($sql)) {
-        echo "Conexion establecida";
         // Vincula las variables a la declaración preparada
-        $stmt->bind_param("s", $correo);
+        $claveHashedInput = hash('sha256', $clave);
+        $stmt->bind_param("ss", $correo, $claveHashedInput);
 
         // Ejecuta la declaración
         if ($stmt->execute()) {
             // Almacena el resultado
             $stmt->store_result();
-            echo "Ejecuto";
-            // Comprueba si el correo existe en la base de datos
+
+            // Comprueba si las credenciales son correctas
             if ($stmt->num_rows == 1) {
-                // Vincula las variables de resultado
-                $stmt->bind_result($id, $nombreUsuario, $correo, $claveHashed);
-                echo "Trajo data";
-                // Obtiene la fila de resultado
-                if ($stmt->fetch()) {
-                    // Comprueba si la contraseña es correcta
-                    if (password_verify($clave, $claveHashed)) {
-                        // La contraseña es correcta, inicia la sesión
-                        echo "Trajo data";
-                        session_start();
-                        $_SESSION['loggedin'] = true;
-                        $_SESSION['id'] = $id;
-                        $_SESSION['correo'] = $correo;
-                        
-                        // Redirige al usuario a la página principal
-                        header("location: Pages/Principal.php");
-                    } else {
-                        // La contraseña no es correcta, muestra un mensaje de error
-                        $mensaje = "La contraseña que has introducido no es válida.";
-                    }
-                }
+                // Las credenciales son correctas, inicia la sesión
+                session_start();
+                $_SESSION['loggedin'] = true;
+
+                // Redirige al usuario a la página principal
+                header("location: ../../Pages/Principal.php");
+                exit;
             } else {
-                // El correo no existe en la base de datos, muestra un mensaje de error
-                $mensaje = "No se encontró ninguna cuenta con ese correo.";
+                // Las credenciales no son correctas, guarda un mensaje de error en la sesión
+                session_start();
+                $_SESSION['mensaje'] = "Las credenciales que has introducido no son válidas.{$correo}";
+                header("location: ../../index.php");
+                exit;
             }
         } else {
             echo "Algo salió mal. Por favor, inténtalo de nuevo más tarde.";
