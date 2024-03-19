@@ -1,0 +1,11 @@
+{
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Submit",
+    "no_account": "Don't have an account?",
+    "register": "Register",
+    "select_language": "Select Language",
+
+    "star":"Star"
+}
