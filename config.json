@@ -1,0 +1,6 @@
+{
+    "ConnectionStrings": {
+        "cadenaSqlServer": "Server=localhost;Database=ctv_reportslims;Uid=root;Pwd='';",
+        "cadenaSqlServer2": "Server=SALMLWS004; Database=LabAlsPE; User Id=sa; Password=1qaz2WSX; TrustServerCertificate=true"
+    }
+}
