@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="inicio.php" method="post">
+                    <form action="Controladores/Validaciones/validacionInicioSession.php" method="post">
                         <div class="mb-3">
                             <input class="form-control" type="text" placeholder="Correo" required name="correo">
                         </div>

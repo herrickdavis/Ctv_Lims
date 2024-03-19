@@ -5,14 +5,12 @@ $config = json_decode(file_get_contents("../../config.json"), true);
 // Selecciona la cadena de conexión
 $selectedConnectionString = $config['ConnectionStrings']['cadenaSqlServer'];
 
-// Parsea la cadena de conexión
-$connectionParts = parse_url($selectedConnectionString);
-
 // Extrae los detalles de la conexión
-$server = $connectionParts['host'];
-$database = substr($connectionParts['path'], 1);
-$username = $connectionParts['user'];
-$password = $connectionParts['pass'];
+$details = explode(";", $selectedConnectionString);
+$server = explode("=", $details[0])[1];
+$database = explode("=", $details[1])[1];
+$username = explode("=", $details[2])[1];
+$password = explode("=", $details[3])[1];
 
 // Crea la conexión
 $conn = new mysqli($server, $username, $password, $database);
@@ -23,3 +21,4 @@ if ($conn->connect_error) {
 }
 
 // Ahora puedes usar $conn para hacer consultas a tu base de datos
+?>
