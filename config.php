@@ -1,3 +1,3 @@
 <?php
-define('ROOT_URL', 'http://localhost/Marcacion/');
+define('ROOT_URL', 'http://localhost/Ctv_Lims/');
 ?>

@@ -29,13 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['loggedin'] = true;
 
                 // Redirige al usuario a la página principal
-                header("location: ../../Pages/Principal.php");
+                header("location: ../../Pages/Principal");
                 exit;
             } else {
                 // Las credenciales no son correctas, guarda un mensaje de error en la sesión
                 session_start();
                 $_SESSION['mensaje'] = "Las credenciales que has introducido no son válidas.{$correo}";
-                header("location: ../../index.php");
+                header("location: ../../index");
                 exit;
             }
         } else {

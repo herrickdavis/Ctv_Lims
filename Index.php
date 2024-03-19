@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
 
 
     <title>Login</title>
@@ -60,6 +60,11 @@ session_start();
                 <div class="card-header text-center bg-primary rounded-top InicioSession">
                     Iniciar Sesión
                 </div>
+                <select name="language" onchange="this.form.submit()">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+
                 <div class="card-header text-center rounded-top InicioSession" style="background-color: white;">
                     <div class="d-flex align-items-center text-center">
                         <img src="Recursos/img/LogoALS.png" alt="Logo" class="logo w-25 h-25">
