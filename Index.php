@@ -66,6 +66,7 @@ $translations = json_decode(file_get_contents("Lenguaje-$language.json"), true);
                         <h5 class="mb-0 ml-3" style="background-color: white; color: black; padding: 5px;">CTVLims</h5>
                     </div>
                 </div>
+               
                 <div class="card-body">
                     <form action="Controladores/Validaciones/validacionInicioSession.php" method="post">
                         <div class="mb-3">
@@ -105,6 +106,7 @@ $translations = json_decode(file_get_contents("Lenguaje-$language.json"), true);
             </div>
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 

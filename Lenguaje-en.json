@@ -1,11 +1,17 @@
 {
-    "login": "Login",
-    "email": "Email",
-    "password": "Password",
-    "submit": "Submit",
-    "no_account": "Don't have an account?",
-    "register": "Register",
-    "select_language": "Select Language",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "submit": "Submit",
+  "no_account": "Don't have an account?",
+  "register": "Register",
+  "select_language": "Select Language",
 
-    "star":"Star"
+  "star": "Star",
+  "Emision": "Broadcast",
+  "CerrarSession": "Logout",
+  "Inf. Comparativo": "Comparative Report",
+  "Ingresar Numero de Muestra": "Enter Sample Number",
+  "Ingresar Año": "Enter Year",
+  "Comparar": "Compare"
 }

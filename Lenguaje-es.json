@@ -8,7 +8,12 @@
     "register": "Regístrate",
     "select_language": "Seleccionar Idioma",
 
-    "star":"Inicio"
-
+    "star": "Estrella",
+    "Emision": "Emisión",
+    "CerrarSession": "Cerrar Sesión",
+    "Inf. Comparativo": "Informe Comparativo",
+    "Ingresar Numero de Muestra": "Ingresar Numero de Muestra",
+    "Ingresar Año": "Ingresar Año",
+    "Comparar": "Comparar"
     
 }

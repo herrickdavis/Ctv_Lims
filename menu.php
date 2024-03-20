@@ -2,7 +2,7 @@
 
 include '../config.php';
 // Establecer el idioma predeterminado en 'en' si no se ha seleccionado ninguno
-
+session_start();
 $language = isset($_SESSION['language']) ? $_SESSION['language'] : 'en';
 $translations = json_decode(file_get_contents(ROOT_URL . "Lenguaje-$language.json"), true);
 
@@ -24,8 +24,8 @@ $translations = json_decode(file_get_contents(ROOT_URL . "Lenguaje-$language.jso
 
             <!-- Navigation Items -->
             <ul class="navbar-nav">
-                <li class='nav-item'>
-                    <a href='<?php echo ROOT_URL; ?>Pages/Principal' class='nav-link text-dark special-home'>
+                <li class='nav-item special-home_'>
+                    <a href='<?php echo ROOT_URL; ?>Pages/Principal' class='nav-link text-dark'>
                         <h1 class='custom-text-size'><?php echo $translations['star']; ?></h1>
                     </a>
                 </li>
@@ -36,16 +36,16 @@ $translations = json_decode(file_get_contents(ROOT_URL . "Lenguaje-$language.jso
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Emision
+                    <?php echo $translations['Emision']; ?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="<?php echo ROOT_URL; ?>/Pages/Informe_Comparativo">Inf. Comparativo</a></li>
+                        <li><a class="dropdown-item" href="<?php echo ROOT_URL; ?>/Pages/Informe_Comparativo"><?php echo $translations['Inf. Comparativo']; ?></a></li>
                         <!-- Agrega más elementos aquí si necesitas -->
                     </ul>
                 </li>
                 <!-- Logout -->
                 <li class='nav-item'>
-                    <a href='<?php echo ROOT_URL; ?>' class='nav-link text-dark'>Cerrar Sesion</a>
+                    <a href='<?php echo ROOT_URL; ?>' class='nav-link text-dark'><?php echo $translations['CerrarSession']; ?></a>
                 </li>
             </ul>
 
