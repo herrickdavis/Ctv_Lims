@@ -31,15 +31,18 @@
                 <form method="post">
                     <div class="mb-3">
                         <label for="sampleNumber" class="form-label"><?php echo $translations['Ingresar Numero de Muestra']; ?></label>
-                        <input type="text" class="form-control" id="sampleNumber" name="sampleNumber" placeholder="<?php echo $translations['Ingresar Numero de Muestra']; ?>">
+                        <input type="text" class="form-control" id="sampleNumber" name="sampleNumber" placeholder="<?php echo $translations['Ingresar Numero de Muestra']; ?>" require>
                     </div>
                     <div class="mb-3">
                         <label for="year" class="form-label"><?php echo $translations['Ingresar Año']; ?></label>
-                        <input type="text" class="form-control" id="year" name="year" placeholder="<?php echo $translations['Ingresar Año']; ?>">
+                        <input type="text" class="form-control" id="year" name="year" placeholder="<?php echo $translations['Ingresar Año']; ?>" require>
                     </div>
                     <button type="submit" class="btn btn-primary"><?php echo $translations['Comparar']; ?></button>
                 </form>
             </div>
+            <div id="divTabla" class="container-md mx-auto">
+            </div>
+
         </form>
 
 

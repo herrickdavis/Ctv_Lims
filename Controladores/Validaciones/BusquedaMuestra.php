@@ -1,5 +1,6 @@
 <?php
 session_start();
+$language = isset($_SESSION['language']) ? $_SESSION['language'] : 'en';
 
 include '../Conexion/Conexion.php';
 include 'Mostrarparametros.php';
@@ -58,13 +59,20 @@ try {
     // Unifica los dos JSON en uno solo
     $datos_reporte = array(
         'resultado_parametros' => $nuevoJson_params_EN,
-        'data' => $data_Cliente,
-        'resultados_parametrosES' => $resultado_parametros_ES
+        'data' => $data_Cliente
+
     );
-    echo json_encode($datos_reporte);
+
 
     // Llama a la función GenerarReporte pasándole el JSON unificado
     generarreporte3($datos_reporte);
+
+    $datos_reporte_sedPrincipal = array(
+        'resultado_parametros' =>  $language == 'es' ? $resultado_parametros_ES : $nuevoJson_params_EN
+       
+
+    );
+    echo json_encode($datos_reporte_sedPrincipal);
 } catch (Exception $e) {
     echo $e->getMessage();
     die();
