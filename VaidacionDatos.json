@@ -14,33 +14,6 @@
       "year": 2023,
       "NUMERO_ANALISIS": 6,
       "Numero_Informe": 561,
-      "Idparametro": 60,
-      "Parametro": "lambda-Cihalotrina",
-      "resultado": "0.051"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 65,
-      "Parametro": "Deltametrina",
-      "resultado": "0.015"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 71,
-      "Parametro": "Deltametrina",
-      "resultado": "0.015"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
       "Idparametro": 78,
       "Parametro": "Difenoconazol",
       "resultado": "0.050"
@@ -54,24 +27,7 @@
       "Parametro": "Dimetomorfo",
       "resultado": "0.034"
     },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 86,
-      "Parametro": "Difenoconazol",
-      "resultado": "0.050"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 87,
-      "Parametro": "Dimetomorfo",
-      "resultado": "0.034"
-    },
+
     {
       "Numero_Muestra": 641,
       "year": 2023,
@@ -83,38 +39,6 @@
     }
   ],
   "data": [
-    {
-      "Codigo_Cliente": "0149",
-      "datarecepcion": {
-        "date": "2021-03-03 00:00:00.000000",
-        "timezone_type": 3,
-        "timezone": "Europe/Berlin"
-      },
-      "Fecha_inicio_ensayo": {
-        "date": "2021-03-03 16:17:27.200000",
-        "timezone_type": 3,
-        "timezone": "Europe/Berlin"
-      },
-      "NombreCliente": "MAKRO SUPERMAYORISTA S.A",
-      "Direccion": "Av. Jorge Chavez Nro. 1218 ",
-      "Pais": "Santiago de Surco, Lima, Lima"
-    },
-    {
-      "Codigo_Cliente": "0411",
-      "datarecepcion": {
-        "date": "2022-03-09 00:00:00.000000",
-        "timezone_type": 3,
-        "timezone": "Europe/Berlin"
-      },
-      "Fecha_inicio_ensayo": {
-        "date": "2022-03-09 14:46:28.880000",
-        "timezone_type": 3,
-        "timezone": "Europe/Berlin"
-      },
-      "NombreCliente": "INVERSIONES PRISCO S.A.C.",
-      "Direccion": "----DERBY NRO. 250 INT. 201 URB. EL DERBY ",
-      "Pais": "LIMA - LIMA - SANTIAGO DE SURCO"
-    },
     {
       "Codigo_Cliente": "0444",
       "datarecepcion": {
@@ -149,90 +73,3 @@
     }
   ]
 }
-
-
-
-[
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 33,
-      "Parametro": "Carbendazima",
-      "resultado": "0.109"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 60,
-      "Parametro": "lambda-Cihalotrina",
-      "resultado": "0.051"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 65,
-      "Parametro": "Deltametrina",
-      "resultado": "0.015"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 71,
-      "Parametro": "Deltametrina",
-      "resultado": "0.015"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 78,
-      "Parametro": "Difenoconazol",
-      "resultado": "0.050"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 85,
-      "Parametro": "Dimetomorfo",
-      "resultado": "0.034"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 86,
-      "Parametro": "Difenoconazol",
-      "resultado": "0.050"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 87,
-      "Parametro": "Dimetomorfo",
-      "resultado": "0.034"
-    },
-    {
-      "Numero_Muestra": 641,
-      "year": 2023,
-      "NUMERO_ANALISIS": 6,
-      "Numero_Informe": 561,
-      "Idparametro": 260,
-      "Parametro": "Clorhidrato de Propamocarb  ",
-      "resultado": "0.040"
-    }
-  ]
-  

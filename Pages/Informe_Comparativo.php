@@ -14,25 +14,12 @@
     ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("form").submit(function(event) {
-                event.preventDefault();
-                $.ajax({
-                    url: '../Controladores/Validaciones/BusquedaMuestra.php',
-                    type: 'post',
-                    data: {
-                        year: $('#year').val(),
-                        sampleNumber: $('#sampleNumber').val()
-                    },
-                    success: function(data) {
-                        console.log(data);
-                        // Parsea los datos devueltos por BusquedaMuestra.php
-                        var results = JSON.parse(data);                     
-                    }
-                });
-            });
-        });
+
     </script>
+    <script src="../js/ValidarData.js"></script>
+
+
+
 </head>
 
 <body>
@@ -57,6 +44,23 @@
 
 
     </div>
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">Alerta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="alertModalBody">
+                    <!-- El mensaje de la alerta se insertará aquí -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

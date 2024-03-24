@@ -12,7 +12,8 @@ function ExtraerParametros($year, $numeroMuestra)
         --CONVERT(anl.Descricao USING ASCII) AS ensayo
         anrls.IdSubEnsaio as Idparametro,
         anrls.Descricao AS Parametro,
-        anrls.rValor1 AS resultado
+        anrls.rValor1 AS resultado,
+        concat(SUBSTRING(ANRLS.TipoDoc, 2, LEN(ANRLS.TipoDoc)),'/',ANRLS.NumDoc)as Num_ensayo
        
     FROM
         TDE_Amostras am
@@ -44,11 +45,13 @@ function ExtraerParametros($year, $numeroMuestra)
         $stmt = sqlsrv_prepare($connSqlServer, $sql, $params);
 
         if ($stmt === false) {
-            throw new Exception('Error preparing the statement: ' . print_r(sqlsrv_errors(), true));
+            echo json_encode(array('error-ExtraerParametros' => print_r(sqlsrv_errors(), true)));
+            die();
         }
 
         if (sqlsrv_execute($stmt) === false) {
-            throw new Exception('Error executing the statement: ' . print_r(sqlsrv_errors(), true));
+            echo json_encode(array('error-ExtraerParametros' => print_r(sqlsrv_errors(), true)));
+            die();
         }
 
         $data = array();
@@ -57,17 +60,17 @@ function ExtraerParametros($year, $numeroMuestra)
         }
 
         if (empty($data)) {
-            //echo json_encode(array('error' => 'No data found'));
+            return array('error-ExtraerParametros' => 'No data found');
         } else {
-            //echo json_encode($data);
+            return $data;
         }
     } catch (Exception $e) {
-        //echo json_encode(array('error' => $e->getMessage()));
+        return array('error-ExtraerParametros' => $e->getMessage());
     }
-    return $data;
 }
 
-function consultarEquivalencias($json) {
+function consultarEquivalencias($json)
+{
     $data = json_decode($json, true);
     $newData = array();
 
@@ -105,10 +108,12 @@ function consultarEquivalencias($json) {
 
         array_push($newData, $item);
     }
-
     // Cierra la conexión
     $conn->close();
 
-    return json_encode($newData);
+    if (empty($newData)) {
+        return array('error-consultarEquivalencias' => 'No data found');
+    } else {
+        return $newData;
+    }
 }
-
